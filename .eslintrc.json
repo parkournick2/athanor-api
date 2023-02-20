@@ -3,24 +3,25 @@
     "es2021": true,
     "node": true
   },
-  "extends": "standard-with-typescript",
+  "extends": [
+    "standard-with-typescript",
+    "airbnb",
+    "prettier",
+    "plugin:node/recommended"
+  ],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["unused-imports"],
+  "plugins": ["prettier"],
   "rules": {
-    "no-unused-vars": "error", // or "@typescript-eslint/no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "varsIgnorePattern": "^_",
-        "args": "after-used",
-        "argsIgnorePattern": "^_"
-      }
-    ]
+    "prettier/prettier": "error",
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "func-names": "off",
+    "no-process-exit": "off",
+    "object-shorthand": "off",
+    "class-methods-use-this": "off"
   }
 }
