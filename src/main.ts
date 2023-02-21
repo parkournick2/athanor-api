@@ -4,7 +4,6 @@ import { NestFactory } from '@nestjs/core'
 import * as dotenv from 'dotenv'
 
 dotenv.config()
-dotenv.config({ path: `.env.local`, override: true })
 
 const bootstrap = async () => {
   const PORT = process.env.PORT || 4000
