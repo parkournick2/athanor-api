@@ -41,7 +41,7 @@ export class UserService {
         email,
       },
     })
-    return { ...user, password: undefined }
+    return { ...user }
   }
 
   async findOne(id: number): Promise<User> {
