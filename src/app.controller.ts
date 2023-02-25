@@ -1,5 +1,7 @@
-import { Controller, Get } from '@nestjs/common'
 import { AppService } from './app.service'
+import { CurrentUser } from './auth/decorators/current-user.decorator'
+import { User } from './user/entities/user.entity'
+import { Controller, Get } from '@nestjs/common'
 
 @Controller()
 export class AppController {
@@ -8,5 +10,10 @@ export class AppController {
   @Get('ping')
   ping(): string {
     return this.appService.ping()
+  }
+
+  @Get('me')
+  getMet(@CurrentUser() user: User): User {
+    return user
   }
 }
